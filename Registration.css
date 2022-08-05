@@ -1,0 +1,355 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:Arial, Helvetica, sans-serif;
+    width: 100%;
+    height: 100vh;
+    font-size: 1rem;
+}
+.container {
+    min-height: 100%;
+    width: 100%;
+    padding: 3rem .5rem 3rem .5rem;
+    background: rgba(238, 238, 140, 0.712);
+}
+
+#form {
+    /* height: 60rem; */
+    width: 35rem;
+    max-width: 98%;
+    padding: 1rem 1.5rem;
+    padding-bottom: 1.5rem;
+    background: rgb(238, 238, 140);
+    margin: 0 auto;
+    border-radius: 1rem;
+    box-shadow: 0 0 5px 1px rgba(107, 103, 103, .2);
+    color: rgb(5, 1, 42);
+}
+
+.info:not(.not-yet) {
+    width: 100%;
+    padding: .1rem;
+    margin-bottom: .5rem;
+    height: 4.5rem;
+}
+.info.not-yet {
+    width: 100%;
+    padding: .1rem;
+    display: none;
+}
+
+.info.not-yet.active {
+  display: block;
+}
+
+input {
+    display: block;
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: .5rem 1rem;
+    height: 2.7rem;
+}
+label {
+    display: block;
+    margin-bottom: .2rem;
+    padding-left: .2rem;
+}
+input:focus:not(#phone_number, #submit) {
+    box-shadow: 0px 0px 4px 1px blue;
+    transition: 1s;
+}
+select:focus {
+    box-shadow: 0px 0px 4px 1px blue;
+    transition: 1s;
+}
+
+
+[for="phone_number"] {
+    align-self: flex-start;
+}
+input, select {
+    border-radius: 1rem;
+}
+.phone_number_wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-radius: 1rem;
+    width: 100%;
+    background: white;
+    padding: 0 .3rem;
+}
+
+.phone_number_wrapper.notify {
+    box-shadow: 0 0 4px 2px red;
+}
+.phone_number_wrapper:hover {
+    box-shadow: 0px 0px 4px 1px blue;
+    transition: 1s;
+}
+
+#country-names {
+    height: 2.7rem;
+    width: 100%;
+    outline: none;
+    border: none;
+    /* border-radius: 2rem; */
+    padding: .5rem .5rem;
+    background: white;
+}
+
+#form #network-name {
+    background: white;
+    width: 100%;
+    outline: none;
+    border: none;
+    /* border-radius: 2rem; */
+    padding: .5rem .5rem;
+/*     display: none; */
+    margin-bottom: .5rem;
+    height: 2.7rem;
+}
+#form #network-name:invalid {
+    box-shadow: 0px 0px 4px 1px red;
+}
+
+#form option {
+    color: black;
+}
+
+h3#title {
+    font-size: 1.5rem;
+    color: rgb(5, 1, 42);
+    text-shadow: 1px 1px 3px white;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+
+#country-code {
+    width: 12%;
+    height: 80%;
+    padding: 0 .5rem;
+    border: none;
+    outline: none;
+    border-right: 1px solid rgb(184, 179, 179);
+    text-align: center;
+    color: black;
+    font-weight: lighter;
+    display: none;
+}
+
+#phone_number {
+    width: 84%;
+    padding: 1rem .2rem;
+    outline: none;
+    border: none;
+    background: white;
+    font-size: .9rem;
+}
+#error {
+    position: absolute;
+    top: -2.5rem;
+    left: 5.2rem;
+    color: rgb(213, 23, 23);
+    padding: 1rem .5rem;
+    display: none;
+    font-size: .9rem;
+}
+
+#telcom_logo_wrapper {
+    /* height: 3.2rem; */
+    max-width: 3rem;
+    min-width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: white;
+}
+
+#telcom_logo {
+    display: block;
+    width: 80%;
+    height: 70%;
+    border-radius: 50%;
+    opacity: 0;
+}
+
+#telcom_logo.active {
+    animation-name: appear;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+ @keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: .5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#submit {
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    text-align: center;
+    line-height: .7rem;
+    margin-top: 1rem;
+}
+
+#submit:hover {
+    background: rgb(253, 258, 180);
+}
+#submit:active {
+    color: blueviolet;
+}
+
+@media screen and (max-width: 480px) {
+    #country-code {
+        width: 20%;
+    }
+    #telcom_logo_wrapper {
+        width: 30%;
+    }
+
+    #phone_number, #country-code {
+      font-size: .8rem;
+    }
+}
+@media screen and (max-width: 320px) {
+    #error {
+      top: -2.4rem;
+      font-size: .6rem;
+    }
+}
+
+/*****************
+Attaching the Header and Footer
+*****************/
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    padding: 0.3%;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    color: #333;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+/*     background-color: blueviolet; */
+/*   background-color: #f77a2d; */
+  background-color: rgb(234, 234, 52);
+}
+
+#logo {
+    margin: 5px 0;
+    text-align: left;
+    color: black;
+    font-size: 15px;
+}
+
+.menu-icon {
+    width: 25px;
+    cursor: pointer;
+    display: none;
+}
+
+nav {
+    flex: 1;
+    text-align: right;
+}
+
+nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+}
+
+nav ul li a:hover {
+    color: chocolate;
+}
+
+div a {
+    text-decoration: none;
+}
+
+.social-links img {
+    height: 15px;
+  width: 20px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.social-links {
+    text-align: center;
+/*     background-color: blueviolet; */
+/*   background-color: #f77a2d; */
+  background-color: rgb(234, 234, 52);
+}
+
+@media only screen and (max-width: 700px) {
+    nav ul {
+        width: 100%;
+/*         background: linear-gradient( #f77a2d, #f15f04); */
+      background-color: rgb(234, 234, 52);
+/*       background-color: #f77a2d; */
+        position: absolute;
+        top: 75px;
+        right: 0;
+        z-index: 2;
+    }
+    nav ul li {
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    nav ul li a {
+/*         color: #fff; */
+      color: #000000
+    }
+    .menu-icon {
+        display: block;
+      height: 15px;
+      width: 25px;
+    }
+    #menuList {
+        overflow: hidden;
+        transition: 0.5s;
+    }
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title></title>
+  <script src="index.mjs" type="module"></script>
+  <link href="Registration.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="navbar">
+    <a href="" id="logo">
+      <h2>Vanilla Troops</h2>
+      <h4>AltSchool</h4>
+    </a>
+    <nav>
+      <ul id="menuList">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./About.html">About Us</a></li>
+        <li><a href="./Registration.html">Registration</a></li>
+      </ul>
+    </nav>
+    <img src="./Images/menu.png" class="menu-icon" alt="menu_img" onclick="togglemenu()" />
+  </div>
+<!--   <br />
+  <br>
+  <br> -->
+  <div class="container">
+    <form id="form">
+      <h3 id="title">Vanilla Troops Registration </h3>
+      <div class="info">
+        <label for="firstname">Firstname</label>
+        <input id="firstname" type="text" placeholder="Enter your firstname" />
+      </div>
+      <div class="info">
+        <label for="lastname">Lastname</label>
+        <input id="lastname" type="text" placeholder="Enter your lastname" />
+      </div>
+      <div class="info">
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="Enter your E-mail" />
+      </div>
+      <div class="info">
+        <label for="country-names">Country</label>
+        <select id="country-names" name="country-names" required>
+          <option disabled selected option value="">Select your country</option>
+        </select>
+      </div>
+      <div class="info not-yet">
+        <label for="network-name">Select your telcom provider</label>
+        <select id="network-name">
+          <option disabled selected option value="choose">
+            Select your network
+          </option>
+          <option value="Mtn">Mtn</option>
+          <option value="Airtel">Airtel</option>
+          <option value="Glo">Glo</option>
+          <option value="9mobile">9mobile</option>
+          <option value="Any">Any network</option>
+        </select>
+      </div>
+      <div class="info">
+        <label for="phone_number">Contact No.</label>
+        <div class="phone_number_wrapper">
+          <div id="error"></div>
+          <p id="country-code"></p>
+          <input id="phone_number" type="tel" placeholder="enter your number (e.g. 805xxxxxxx)" required
+            autocomplete="off" list="telcom-lines" />
+          <datalist id="telcom-lines"></datalist>
+          <div id="telcom_logo_wrapper">
+            <img id="telcom_logo" />
+          </div>
+        </div>
+      </div>
+      <div class="info">
+        <label for="password">Password</label>
+        <input id="password" type="password" placeholder="Enter password" />
+      </div>
+      <div class="info">
+        <label for="confirm-password">Confirm password</label>
+        <input id="confirm-password" type="password" placeholder="Re-enter password" />
+      </div>
+      <input id="submit" type="submit" value="sign up" />
+    </form>
+  </div>
+  <footer>
+    <div class="social-links">
+      <!-- <img src="fb.png" alt="fb img" /> -->
+      <a href="https://www.altschoolafrica.com/">
+        <img src="/Images/ig.png" alt="Ig img" role="link" />
+      </a>
+      <a href="https://twitter.com/AltSchoolAfrica">
+        <img src="/Images/tw.png" alt="tw img" />
+      </a>
+
+      <p>&copy; 2022 Vanilla Troops.</p>
+    </div>
+  </footer>
+  <title>Vanilla Troops</title>
+  <title>Vanilla Troops</title>
+  <script src="script.js"></script>
+</body>
+
+</html>
