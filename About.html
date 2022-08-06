@@ -1,75 +1,51 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>About vanilla troops</title>
     <link href="About.css" rel="stylesheet" type="text/css" />
+    <link href="header-footer.css" rel="stylesheet">
+  <script src="shared-header-footer.js"></script>
 </head>
 
 <body>
     <div class="container">
-        <div class="navbar">
-            <a href="" id="logo">
-                <h2>Vanilla Troops</h2>
-                <h4>AltSchool</h4>
-            </a>
-            <nav>
-                <ul id="menuList">
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="./About.html">About Us</a></li>
-                    <li><a href="./Registration.html">Registration</a></li>
-                </ul>
-            </nav>
-            <img src="./Images/menu.png" class="menu-icon" alt="menu_img" onclick="togglemenu()" />
-        </div>
+      <main-header></main-header>
         <div id="info">
-            <h2>How We Came To Be</h2>
+            <h2>How we came to be</h2>
             <p>
-                Vanilla troops is one amongst the many groups formed within AltSchoolAfrica to carry out the holiday Project.
+                Vanilla troops is one amongst the many groups formed within AltSchoolAfrica to carry out the holiday project.
             </p>
             <p>
-                Like many other groups formed within AltSchool, Vanilla troops is made up of students who cut across the different learning tracks; FrontEnd,
-                BackEnd and Cloud Engineering.
+                Like many other groups formed within AltSchool, Vanilla troops is made up of students who cut across the different learning tracks; frontend,
+                backend and cloud engineering.
             </p>
             <p>
                 However, this group is special because it doesn't follow the
-                traditional AltSchool grouping which categorizes students in circles,
-                rather Vanilla troops is more like an offshoot of different persons
-                from different circles whose circle members might have been inactive
-                or non-responsive hence prompting them to seek out other groups.
+                traditional AltSchool grouping which categorizes students in circles.
+                Rather, Vanilla troops is more of an offshoot of different persons
+                from different circles whose circle members were more or less inactive
+                or non-responsive; hence, prompting them to seek out other groups.
             </p>
             <h2>Is the group legal?</h2>
             <p>
-                Well, don't fret, Vanilla group is totally legal, your concerns as to
-                why the group might not be legal is understandable. Owing to Our
-                Instructor
-                <em>Jerry Uke</em> giving room for some persons to join other groups
-                mainly on the basis that their original circle was inactive or not
-                cordinated. On such grounds Vanilla group is fully legal and
+                Well, don't fret, Vanilla troops is totally legal. Your concerns as to
+                why the group might not be legal is understandable. However, owing to our
+                instructor
+                <em style="font-style: normal; font-weight: 700;">Jerry Uke</em> giving room for some persons to join other groups,
+                mainly on the premise that their original circle was inactive or not
+                cordinated, Vanilla troops is fully legal and
                 authorized to fly as an adhoc group.
             </p>
-            <h2>About the Vanilla AltSchool Group</h2>
+            <h2>About the project</h2>
+          <p>The project is a simple html form whose phone number field is able to support multiple country codes, and is able to recognize a Nigerian number, majorly the four most popular telcom providers in nigeria: Mtn, Airtel, Glo and 9mobile, and display a logo that corresponds to the respective brands.</p>
+          <h2>How it works</h2>
+<p>Fill the form with your information and submit. However, the magic only happens after picking Nigeria as your country since the form solely concerns Nigerian telcom providers</p>
         </div>
     </div>
-    <footer>
-        <div class="social-links">
-            <!-- <img src="fb.png" alt="fb img" /> -->
-            <a href="https://www.altschoolafrica.com/">
-                <img src="/Images/ig.png" alt="Ig img" role="link" />
-            </a>
-            <a href="https://twitter.com/AltSchoolAfrica">
-                <img src="/Images/tw.png" alt="tw img" />
-            </a>
-            <p>&copy; 2022 Vanilla Troops.</p>
-        </div>
-    </footer>
+    <main-footer></main-footer>
     <script src="script.js"></script>
-    <!--
-This script places a badge on your repl's full-browser view back to your repl's cover page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green, teal, blue, blurple, magenta, pink!
--->
-    <!--   <script src="https://replit.com/public/js/replit-badge.js" theme="dark" defer></script> -->
 </body>
 
 </html>

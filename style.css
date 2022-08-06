@@ -11,13 +11,12 @@
 }
 
 body {
-    padding: 0 0.3%;
     font-family: sans-serif;
     box-sizing: border-box;
     color: rgb(5, 1, 42);
     font-weight: 400;
     line-height: 1.4;
-    background: rgba(238, 238, 140, 0.712);
+    background: rgba(238, 238, 140, .2);
 
 }
 
@@ -34,14 +33,14 @@ body {
     overflow: hidden;
 }
 
-.navbar {
-    width: 100%;
-    display: flex;
-    align-items: center;
-/*     background-color: blueviolet; */
-/*   background-color: #f77a2d; */
-  background-color: rgb(234, 234, 52);
-  padding-left: .7rem;
+/* .navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: blueviolet;
+  background-color: #f77a2d;
+  background-color: rgba(234, 234, 52, .7);
+  padding: 0 .7rem 0 .7rem;
 }
 
 #logo {
@@ -81,7 +80,7 @@ nav ul li a:hover {
 div a {
     text-decoration: none;
 }
-
+ */
 figure div p {
     text-align: center;
     color: black;
@@ -197,7 +196,7 @@ figure div p {
     grid-row-end: 10;
 }
 
-.social-links img {
+/* .social-links img {
     height: 13px;
     margin: 10px;
     cursor: pointer;
@@ -205,19 +204,19 @@ figure div p {
 
 .social-links {
     text-align: center;
-/*     background-color: blueviolet; */
-/*   background-color: #f77a2d; */
-  background-color: rgb(234, 234, 52);
+    background-color: blueviolet;
+  background-color: #f77a2d;
+  background-color: rgba(234, 234, 52, .7);
 }
 
 @media only screen and (max-width: 700px) {
     nav ul {
         width: 100%;
-      background-color: rgb(234, 234, 52);
-/*         background: linear-gradient( #f77a2d, #f15f04); */
-/*       background-color: #f77a2d; */
+      background-color: rgba(234, 234, 52, .7);
+        background: linear-gradient( #f77a2d, #f15f04);
+      background-color: #f77a2d;
         position: absolute;
-        top: 75px;
+        top: 60px;
         right: 0;
         z-index: 2;
     }
@@ -227,7 +226,7 @@ figure div p {
         margin-bottom: 10px;
     }
     nav ul li a {
-/*         color: #fff; */
+      color: #fff;
       color: #000000
     }
     .menu-icon {
@@ -237,5 +236,6 @@ figure div p {
     #menuList {
         overflow: hidden;
         transition: 0.5s;
+        background: rgba(234, 234, 52);
     }
-}
+} */

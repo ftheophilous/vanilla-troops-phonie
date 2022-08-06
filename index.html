@@ -6,24 +6,12 @@
   <meta name="viewport" content="width=device-width">
   <title>Vanilla Troops</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="header-footer.css" rel="stylesheet" type="text/css">
+  <script src="shared-header-footer.js"></script>
 </head>
 <body>
   <div class="container">
-    <div class="navbar">
-      <a href="" id="logo">
-        <h2>Vanilla Troops</h2>
-        <h4>AltSchool</h4>
-      </a>
-      <nav>
-        <ul id="menuList">
-          <li><a href="./index.html">Home</a></li>
-          <li><a href="./About.html">About Us</a></li>
-          <li><a href="./Registration.html">Registration</a></li>
-        </ul>
-      </nav>
-      <img src="./Images/menu.png" class="menu-icon" alt="menu_img" onclick="togglemenu()" />
-    </div>
-    <br />
+    <main-header></main-header>
     <marquee behavior="alternate" direction="right to left.">Building a school for the next billion Africans.....
     </marquee>
     <div class="parallax-1"></div>
@@ -95,28 +83,9 @@
       </figure>
     </div>
     <div class="parallax-2"></div>
-    <footer>
-      <div class="social-links">
-        <a href="https://www.altschoolafrica.com/">
-          <img src="Images/ig.png" alt="Ig img" role="link" />
-        </a>
-        <a href="https://twitter.com/AltSchoolAfrica">
-          <img src="/Images/tw.png" alt="tw img" />
-        </a>
-
-        <p>&copy; 2022 Vanilla Troops.</p>
-      </div>
-    </footer>
+    <main-footer></main-footer>
   </div>
-
   <script src="script.js"></script>
-
-  <!--
-  This script places a badge on your repl's full-browser view back to your repl's cover
-  page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
-  teal, blue, blurple, magenta, pink!
-  -->
-  <!--   <script src="https://replit.com/public/js/replit-badge.js" theme="dark" defer></script> -->
 </body>
 
 </html>

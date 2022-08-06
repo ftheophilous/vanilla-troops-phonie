@@ -7,28 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sign up to vanilla troops</title>
   <script src="index.mjs" type="module"></script>
+  <script src="shared-header-footer.js"></script>
   <link href="Registration.css" rel="stylesheet" />
+  <link href="header-footer.css" rel="stylesheet" />
 </head>
 <body>
-  <div class="navbar">
-    <a href="" id="logo">
-      <h2>Vanilla Troops</h2>
-      <h4>AltSchool</h4>
-    </a>
-    <nav>
-      <ul id="menuList">
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./About.html">About Us</a></li>
-        <li><a href="./Registration.html">Registration</a></li>
-      </ul>
-    </nav>
-    <img src="./Images/menu.png" class="menu-icon" alt="menu_img" onclick="togglemenu()" />
-  </div>
-<!--   <br />
-  <br>
-  <br> -->
+  <main-header></main-header>
   <div class="container">
-    <form id="form">
+    <form id="form" action="./index.html">
       <h3 id="title">Vanilla Troops Registration </h3>
       <div class="info">
         <label for="firstname">Firstname</label>
@@ -85,18 +71,7 @@
       <input id="submit" type="submit" value="sign up" />
     </form>
   </div>
-  <footer>
-    <div class="social-links">
-      <!-- <img src="fb.png" alt="fb img" /> -->
-      <a href="https://www.altschoolafrica.com/">
-        <img src="/Images/ig.png" alt="Ig img" role="link" />
-      </a>
-      <a href="https://twitter.com/AltSchoolAfrica">
-        <img src="/Images/tw.png" alt="tw img" />
-      </a>
-      <p>&copy; 2022 Vanilla Troops.</p>
-    </div>
-  </footer>
+  <main-footer></main-footer>
   <script src="script.js"></script>
 </body>
 
