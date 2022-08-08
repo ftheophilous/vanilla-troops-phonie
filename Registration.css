@@ -16,6 +16,8 @@ body {
   width: 100%;
   padding: 3rem 0.5rem 3rem 0.5rem;
   background: rgba(238, 238, 140, .2);
+  overflow: hidden;
+  
 }
 
 #form {
@@ -99,23 +101,21 @@ select {
   width: 100%;
   outline: none;
   border: none;
-  /* border-radius: 2rem; */
   padding: 0.5rem 0.5rem;
   background: white;
 }
 
-#form #network-name {
+#network-name {
   background: white;
   width: 100%;
   outline: none;
   border: none;
-  /* border-radius: 2rem; */
+  display: none;
   padding: 0.5rem 0.5rem;
-  /*     display: none; */
   margin-bottom: 0.5rem;
   height: 2.7rem;
 }
-#form #network-name:invalid {
+#network-name.notify {
   box-shadow: 0px 0px 4px 1px red;
 }
 
@@ -231,6 +231,9 @@ h3#title {
 @media screen and (max-width: 320px) {
   #error {
     top: -2.4rem;
-    font-size: 0.6rem;
+    font-size: 0.7rem;
+  }
+  #form {
+    padding: 1rem .7rem;
   }
 }
