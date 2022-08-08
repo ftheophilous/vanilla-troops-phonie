@@ -89,6 +89,9 @@ function startApp() {
 
   function nigerianNetwork(event) {
     networkNames.required = false;
+    if (networkNames.classList.contains("notify")) {
+      networkNames.classList.remove("notify");
+    }
     let line = event.target.value;
     switch (line) {
       case "Mtn":
