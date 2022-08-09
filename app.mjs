@@ -34,7 +34,6 @@ function startApp() {
     "[7][0][1|8][0-9]{7}|[8][0][2|8][0-9]{7}|[8|9][1][2][0-9]{7}|[9][0][1|2|4|7][0-9]{7}";
   let etisalatPattern =
     "[8][0][9][0-9]{7}|[8][1][7|8][0-9]{7}|[9][0][8|9][0-9]{7}";
-  let anyNetwork = [mtnPattern, gloPattern, airtelPattern, etisalatPattern];
 
   const countryNames = document.querySelector("#country-names");
   const networkNames = document.querySelector("#network-name");
@@ -50,15 +49,19 @@ function startApp() {
   let networkNameCheck = document.getElementById("network-name").name;
   const phoneNumberField = document.getElementById("phone_number");
   const submit = document.querySelector("#submit");
+
   createCountryOptions();
+
   countryNames.addEventListener("change", (event) => {
+    countryNames.style.boxShadow = "none";
+
     let code = event.target.value;
     countryCode.innerText = code;
     countryCode.style.display = "block";
-    countryNames.style.boxShadow = "none";
-    
+
+
     removeErrorMessage();
-    
+
     if (code === "+234") {
       networkNames.value = "pending";//this automatically focuses on the first option "Select a network";
       networkNames.addEventListener("change", nigerianNetwork);
@@ -69,7 +72,10 @@ function startApp() {
       infoNotYet.classList.add("active");
       networkNames.style.display = "block";
       networkNames.required = true;
-      
+      if (networkNames.classList.contains("notify")) {
+        networkNames.classList.remove("notify");
+      }
+
     } else {
       infoNotYet.classList.remove("active");
       networkNames.style.display = "none";
@@ -147,8 +153,8 @@ function startApp() {
   // === END OF nigerianNetwork function === //
 
   phoneNumberField.addEventListener("input", removeErrorMessage);
-  submit.addEventListener("click", selectNetwork);
-  submit.addEventListener("click", selectCountry);
+  submit.addEventListener("click", validateNetworkName);
+  submit.addEventListener("click", validateCountryName);
 
   //functions to check all the different telcom lines
   function isMtn(number) {
@@ -200,7 +206,7 @@ function startApp() {
     }
   }
 
-  function selectNetwork() {
+  function validateNetworkName() {
     if (networkNames.style.display === "block" && networkNames.required === true) {
         networkNames.setCustomValidity("Please select a network");
         networkNames.classList.add("notify");
@@ -211,8 +217,8 @@ function startApp() {
         networkNames.setCustomValidity("");
     }
   }
-  
-  function selectCountry() {
+
+  function validateCountryName() {
     if (countryNames.value === "") {
       countryNames.setCustomValidity("Please select your country");
       countryNames.style.boxShadow = "0px 0px 4px 1px red";
