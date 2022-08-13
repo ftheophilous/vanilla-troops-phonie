@@ -16,8 +16,8 @@ body {
   width: 100%;
   padding: 3rem 0.5rem 3rem 0.5rem;
   background: rgba(238, 238, 140, .2);
-  overflow: hidden;
-  
+  overflow-x: hidden;
+
 }
 
 #form {
@@ -78,23 +78,11 @@ input,
 select {
   border-radius: 1rem;
 }
-.phone_number_wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  border-radius: 1rem;
-  width: 100%;
-  background: white;
-  padding: 0 0.3rem;
-}
 
-.phone_number_wrapper.notify {
-  box-shadow: 0 0 4px 2px red;
-}
-.phone_number_wrapper:hover {
+/* .phone_number_wrapper:focus {
   box-shadow: 0px 0px 4px 1px blue;
   transition: 1s;
-}
+} */
 
 #country-names {
   height: 2.7rem;
@@ -144,6 +132,20 @@ h3#title {
   display: none;
 }
 
+.phone_number_wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: 1rem;
+  width: 100%;
+  background: white;
+  padding: 0 0.3rem;
+}
+
+.phone_number_wrapper.notify {
+  box-shadow: 0 0 4px 2px red;
+}
+
 #phone_number {
   width: 84%;
   padding: 1rem 0.2rem;
@@ -183,7 +185,7 @@ h3#title {
 
 #telcom_logo.active {
   animation-name: appear;
-  animation-duration: 2s;
+  animation-duration: 1s;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
 }
