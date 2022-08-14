@@ -99,7 +99,7 @@ div a {
     width: 25px;
   }
   #menuList {
-    overflow: hidden;
+    overflow-x: hidden;
     transition: 0.5s;
     background: rgb(234, 234, 52);
   }
