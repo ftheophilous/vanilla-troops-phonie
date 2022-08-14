@@ -44,8 +44,9 @@ function startApp() {
   const error = document.getElementById("error");
   const logo = document.getElementById("telcom_logo");
 
-  //incase we change the countries, this ensures that on returning back to the country name
-  //a network name is always picked,.and when this happens, the phoneNumber field is checked and the logo displays.
+
+  //This variable ensures that when you come back to choose Nigeria as your country,
+  //you must re-choose a network again before the logo can be displayed
   let networkNameCheck = document.getElementById("network-name").name;
   const phoneNumberField = document.getElementById("phone_number");
   const submit = document.querySelector("#submit");
@@ -54,16 +55,15 @@ function startApp() {
 
   countryNames.addEventListener("change", (event) => {
     countryNames.style.boxShadow = "none";
-
     let code = event.target.value;
     countryCode.innerText = code;
     countryCode.style.display = "block";
-
-
     removeErrorMessage();
-
+    logo.style.opacity = "0";
     if (code === "+234") {
-      networkNames.value = "pending";//this automatically focuses on the first option "Select a network";
+      networkNames.value = "pending";
+
+      //this automatically focuses on the first option "Select a network";
       networkNames.addEventListener("change", nigerianNetwork);
 
       if (networkNameCheck) {
@@ -83,13 +83,14 @@ function startApp() {
       if (logo.classList.contains("active")) {
         logo.classList.remove("active");
       }
+      //the name of the network field is reset so that users choose a network before the
+      //logo displays
       networkNameCheck = undefined;
       networkNames.removeEventListener("change", nigerianNetwork);
       phoneNumberField.removeEventListener("invalid", addErrorMessage);
       phoneNumberField.removeAttribute("pattern");
       removeSuggestionList();
       removeErrorMessage();
-      console.log("Not Nigeria!");
     }
   });
 
@@ -98,6 +99,7 @@ function startApp() {
     if (networkNames.classList.contains("notify")) {
       networkNames.classList.remove("notify");
     }
+
     let line = event.target.value;
     switch (line) {
       case "Mtn":
@@ -155,8 +157,20 @@ function startApp() {
   phoneNumberField.addEventListener("input", removeErrorMessage);
   submit.addEventListener("click", validateNetworkName);
   submit.addEventListener("click", validateCountryName);
+  const form = document.querySelector("#form");
+  for (let child of form) {
+    child.onfocus = () => {
+      if (child === phoneNumberField) {
+        phoneNumberWrapper.style.boxShadow = "0px 0px 4px 1px blue";
+        phoneNumberWrapper.style.transition = "1s";
+      }
+      else {
+        phoneNumberWrapper.style.boxShadow = "";
+        phoneNumberWrapper.style.transition = "";
+      }
+    }
+  }
 
-  //functions to check all the different telcom lines
   function isMtn(number) {
     let match = mtnRegex.test(number);
     if (match) {
@@ -201,6 +215,11 @@ function startApp() {
       error.innerText = `Enter a valid ${networkLine} line!`;
       error.style.display = "block";
       phoneNumberWrapper.classList.add("notify");
+      if (!logo.classList.contains("active")) {
+        logo.src = "./sample-photos/invalid-logo.jpg";
+        logo.alt = "logo indicating INVALID NUMBER";
+        logo.style.opacity = "1";
+      }
     } else {
       error.style.display = "none";
     }
@@ -268,6 +287,7 @@ function startApp() {
 
     if (logo.classList.contains("active")) {
       logo.classList.remove("active");
+      logo.style.opacity = "0";
     }
 
     switch (lineParameter) {
