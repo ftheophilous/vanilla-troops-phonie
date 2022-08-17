@@ -61,9 +61,8 @@ function startApp() {
     removeErrorMessage();
     logo.style.opacity = "0";
     if (code === "+234") {
-      networkNames.value = "pending";
-
-      //this automatically focuses on the first option "Select a network";
+      
+      networkNames.value = "pending"; //this automatically focuses on the first option "Select a network";
       networkNames.addEventListener("change", nigerianNetwork);
 
       if (networkNameCheck) {
@@ -95,6 +94,7 @@ function startApp() {
   });
 
   function nigerianNetwork(event) {
+    removeLogo();
     networkNames.required = false;
     if (networkNames.classList.contains("notify")) {
       networkNames.classList.remove("notify");
@@ -158,6 +158,7 @@ function startApp() {
   submit.addEventListener("click", validateNetworkName);
   submit.addEventListener("click", validateCountryName);
   const form = document.querySelector("#form");
+  //this allows the phone number field wrapper to be focusable
   for (let child of form) {
     child.onfocus = () => {
       if (child === phoneNumberField) {
@@ -216,9 +217,10 @@ function startApp() {
       error.style.display = "block";
       phoneNumberWrapper.classList.add("notify");
       if (!logo.classList.contains("active")) {
+        logo.style.opacity = "1";
         logo.src = "./sample-photos/invalid-logo.jpg";
         logo.alt = "logo indicating INVALID NUMBER";
-        logo.style.opacity = "1";
+        
       }
     } else {
       error.style.display = "none";
@@ -281,13 +283,19 @@ function startApp() {
       telcomLines.innerHTML = "";
     }
   }
+  function removeLogo() {
+    logo.src = "";
+    logo.style.opacity = "0";
+    logo.alt = "";
+  }
 
   function getNetworkName(lineParameter) {
     let number = phoneNumberField.value;
 
     if (logo.classList.contains("active")) {
-      logo.classList.remove("active");
       logo.style.opacity = "0";
+      logo.src = "";
+      logo.classList.remove("active");
     }
 
     switch (lineParameter) {
